@@ -2,7 +2,9 @@ import { fileURLToPath } from "url";
 import path from "path";
 import { testConnection } from "./src/models/db.js";
 import { getAllOrganizations } from "./src/models/organizations.js";
+import { getAllCategories } from "./src/models/categories.js";
 // console.log("Server is running...");
+import { getAllProjects } from "./src/models/projects.js";
 import express from "express";
 
 // Define the the application environment
@@ -39,21 +41,26 @@ app.get("/", async (req, res) => {
 app.get("/organizations", async (req, res) => {
   const organizations = await getAllOrganizations();
   const title = "Our Partner Organizations";
+  // console.log(organizations);
   res.render("organizations", { title, organizations });
 });
 
 app.get("/projects", async (req, res) => {
+  const projects = await getAllProjects();
+  console.log(projects);
   const title = "Service Projects";
-  res.render("projects", { title });
+  res.render("projects", { title, projects });
 });
 app.get("/products", async (req, res) => {
   const title = "Our products";
-  res.render("organizations", { title });
+  res.render("products", { title });
 });
 
 app.get("/categories", async (req, res) => {
-  const title = "Service Projects";
-  res.render("categories", { title });
+  const categories = await getAllCategories();
+  const title = "Service Project Categories";
+  console.log(categories);
+  res.render("categories", { title, categories });
 });
 
 app.listen(PORT, async () => {

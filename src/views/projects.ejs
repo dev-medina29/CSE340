@@ -3,6 +3,19 @@
         <h1>
             <%= title %>
         </h1>
-        <!-- Put your page-specific content here -->
+        <p>Here are some service projects:</p>
+        <ul class="organizations-list">
+            <% projects.forEach(project=> { %>
+                <li>
+                    <p>
+                        <%= project.date.toISOString().split("T")[0] %>:
+                            <%= project.title %>
+                                (<strong>
+                                    <%=project.name%>
+                                </strong>)
+                    </p>
+                </li>
+                <% }); %>
+        </ul>
     </main>
     <%- include('partials/footer') %>

@@ -66,6 +66,7 @@ footer {
 }
 .organizations-list li {
   margin-bottom: 20px;
+  list-style: none;
   display: flex;
   align-items: center;
   gap: 15px;
