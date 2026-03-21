@@ -60,3 +60,13 @@ footer {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+.organizations-list {
+  list-style-type: none;
+  padding: 0;
+}
+.organizations-list li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
