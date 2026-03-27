@@ -1,0 +1,16 @@
+import express from "express";
+import { organizationsPage } from "./organizations.js";
+import { indexPage } from "./index.js";
+import { projectsPage } from "./projects.js";
+import { categoriesPage } from "./categories.js";
+import { testErrorPage } from "./errors.js";
+import { showOrganizationDetailsPage } from "./organizations.js";
+
+const router = express.Router();
+router.get("/organizations", organizationsPage);
+router.get("/", indexPage);
+router.get("/projects", projectsPage);
+router.get("/categories", categoriesPage);
+router.get("/test-error", testErrorPage);
+router.get("/organization/:id", showOrganizationDetailsPage);
+export default router;
