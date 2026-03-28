@@ -19,6 +19,16 @@
             <strong>Overview:</strong> <br>
             <%= projectDetails[0].description %>
         </p>
+        <h3>Categories:</h3>
+        <ul>
+            <% projectCategories.forEach(category=> { %>
+                <li>
+                    <a href="/category/<%= category.category_id %>">
+                        <%= category.name %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
 
 
     </main>
