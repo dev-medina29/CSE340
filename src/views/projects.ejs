@@ -9,10 +9,12 @@
                 <li>
                     <p>
                         <%= project.date.toISOString().split("T")[0] %>:
-                            <%= project.title %>
-                                (<strong>
-                                    <%=project.name%>
-                                </strong>)
+                            <a href="/project/<%= project.project_id %>">
+                                <%= project.title %>
+                            </a>
+                            (<a href="/organization/<%= project.organization_id %>"> <strong>
+                                    <%= project.organization_name %>
+                                </strong></a>)
                     </p>
                 </li>
                 <% }); %>
