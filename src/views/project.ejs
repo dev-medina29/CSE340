@@ -4,16 +4,20 @@
             <%= title %>
         </h1>
         <h2>
-            <%=projectDetails.title%>
+            <%=projectDetails[0].title%>
         </h2>
+
         <p>
-            <%= projectDetails.description %>
+            <strong>Location:</strong>
+            <%= projectDetails[0].location %>
         </p>
         <p>
-            <%= projectDetails.location %>
+            <strong>Date:</strong>
+            <%= projectDetails[0].date.toISOString().split('T')[0] %>
         </p>
         <p>
-            <%= projectDetails.date %>
+            <strong>Overview:</strong> <br>
+            <%= projectDetails[0].description %>
         </p>
 
 
